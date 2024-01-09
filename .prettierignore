@@ -1,0 +1,7 @@
+/templates/accounts/vendorDashboard.html
+/templates/accounts/costDashboard.html
+/templates/accounts/vendorDashboard.html
+/templates/accounts/emails/account_verification_email.html
+/templates/accounts/emails/reset_password_email.html
+/templates/includes/cover.html
+
