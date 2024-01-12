@@ -1,5 +1,5 @@
-{%extends 'base.html'%} {%load static%} {%include 'includes/alerts.html'%}
-{%block content%}
+{%extends 'base.html'%} {%load static%}
+{%block content%} {%include 'includes/alerts.html'%}
 <!-- Main Section Start -->
 <div class="main-section">
   {%include 'includes/cover.html'%}
@@ -47,7 +47,8 @@
                 {% endif %}
                 {% endfor %}
                 <button type="submit" class="btn btn-info"><i class="fa fa-check" aria-hidden="true"></i>Update</button>
-              </form>
+                <a href="{% url 'delete_category' category.id%}" onclick="return confirm('Are you sure you want to delete the {{food}} category')" class="btn btn-danger"><i class="fa fa-trash" ></i> Delete</a>
+            </form>
               <!-- Render Form -->
             </div>
           </div>

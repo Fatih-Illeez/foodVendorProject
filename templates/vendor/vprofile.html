@@ -1,5 +1,5 @@
-{%extends 'base.html'%} {%load static%} {%include 'includes/alerts.html'%}
-{%block content%}
+{%extends 'base.html'%} {%load static%} {%block content%}
+{%include 'includes/alerts.html'%}
 <!-- Main Section Start -->
 <div class="main-section">
   {%include 'includes/cover.html'%}
@@ -32,11 +32,19 @@
                                 <li class="gal-img">
                                   <div class="drag-list">
                                     <div class="item-thumb">
+                                      {%if  profile.profile_picture%}
                                       <img
                                         class="thumbnail"
                                         src="{{profile.profile_picture.url}}"
                                         alt="logo"
                                       />
+                                      {%else%}
+                                      <img
+                                        class="thumbnail"
+                                        src="{%static 'images/default-profile.png' %}"
+                                        alt="logo"
+                                      />
+                                      {%endif%}
                                     </div>
                                   </div>
                                 </li>
@@ -60,11 +68,19 @@
                                 <li class="gal-img">
                                   <div class="drag-list">
                                     <div class="item-thumb">
+                                      {%if profile.cover_photo%}
                                       <img
                                         class="thumbnail"
                                         src="{{profile.cover_photo.url}}"
                                         alt="cover photo"
                                       />
+                                      {%else%}
+                                      <img
+                                        class="thumbnail"
+                                        src="{% static 'images/default-cover.png'%}"
+                                        alt="cover photo"
+                                      />
+                                      {%endif%}
                                     </div>
                                   </div>
                                 </li>

@@ -1,5 +1,5 @@
-{%extends 'base.html'%} {%load static%} {%include 'includes/alerts.html'%}
-{%block content%}
+{%extends 'base.html'%} {%load static%} {%block content%}{%include
+'includes/alerts.html'%}
 <!-- Main Section Start -->
 <div class="main-section">
   {%include 'includes/cover.html'%}
@@ -16,7 +16,10 @@
               <h5 class="text-uppercase">Build your food menu</h5>
               <hr />
               <h6>Menu Categories</h6>
-              <a href="#" class="btn btn-success float-right m-1"
+              {%if categories %}
+              <a
+                href="{% url 'add_food' %}"
+                class="btn btn-success float-right m-1"
                 ><i class="fa fa-plus" aria-hidden="true"></i> Food</a
               >
               <a
@@ -57,6 +60,13 @@
                   {%endfor%}
                 </tbody>
               </table>
+              {%else%}
+              <h5 class="text-center"> No categories found</h5>
+              <div class="text-center"><a href="{% url 'add_category'%}" class="btn btn-success" ><i
+                class="fa fa-plus" 
+                aria-hidden="true"
+              ></i>Add Category</a></div>
+              {%endif%}
             </div>
           </div>
         </div>

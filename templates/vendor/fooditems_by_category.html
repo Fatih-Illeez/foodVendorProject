@@ -1,5 +1,5 @@
-{%extends 'base.html'%} {%load static%} {%include 'includes/alerts.html'%}
-{%block content%}
+{%extends 'base.html'%} {%load static%} {%block content%} 
+{%include 'includes/alerts.html'%}
 <!-- Main Section Start -->
 <div class="main-section">
   {%include 'includes/cover.html'%}
@@ -43,9 +43,19 @@
                       </a>
                     </td>
                     <td>
-                      <i class="fa fa-pencil" aria-hidden="true"></i>
+                      {%if food.is_available%}
+                      <span class="badge badge-success">Available</span>
+                      {%else%}
+                      <span class="badge badge-danger">Not Available</span>
+                      {%endif%}
+
+                    </td>
+                    <td>
+                      <a href="{% url 'edit_food' food.id%}" style="color: unset;">
+                      <i class="fa fa-pencil" aria-hidden="true"></i></a>
                       &nbsp;
-                      <i class="fa fa-trash text-danger" aria-hidden="true"></i>
+                      <a href="{% url 'delete_food' food.id%}"
+                       onclick="return confirm('Are you sure you want to delete the {{food}} food item?')"><i class="fa fa-trash text-danger" aria-hidden="true"></i></a>
                     </td>
                   </tr>
                   {%endfor%}

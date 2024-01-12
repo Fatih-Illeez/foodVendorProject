@@ -4,4 +4,8 @@
 /templates/accounts/emails/account_verification_email.html
 /templates/accounts/emails/reset_password_email.html
 /templates/includes/cover.html
+/templates/vendor/add_food.html
+/templates/vendor/fooditems_by_category.html
+/templates/vendor/menu_builder.html
+/templates/vendor/vprofile.html
 
