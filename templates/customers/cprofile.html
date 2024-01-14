@@ -1,22 +1,23 @@
-{%extends 'base.html'%} {%load static%}{%include 'includes/alerts.html'%} 
+{%extends 'base.html'%}{%include 'includes/alerts.html'%}  {%load static%}
 {%block content%}
+
 <!-- Main Section Start -->
 <div class="main-section">
-  {%include 'includes/cover.html'%}
+  {% include 'customers/cover.html'%}
   <div class="page-section account-header buyer-logged-in">
     <div class="container">
       <div class="row">
         <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
           <!-- load the sidebar here -->
-          {%include 'includes/v_sidebar.html'%}
+          {%include 'includes/c_sidebar.html'%}
         </div>
         <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
           <div class="user-dashboard loader-holder">
             <div class="user-holder">
-              <h5 class="text-uppercase">Manage Your Restaurant</h5>
+              <h5 class="text-uppercase">My Profile Settings</h5>
               <!-- My Restaurants Form Start -->
               <form
-                action="{% url 'vprofile' %}"
+                action="{% url 'cprofile' %}"
                 method="POST"
                 enctype="multipart/form-data"
               >
@@ -32,7 +33,7 @@
                                 <li class="gal-img">
                                   <div class="drag-list">
                                     <div class="item-thumb">
-                                      {%if  profile.profile_picture%}
+                                      {%if profile.profile_picture%}
                                       <img
                                         class="thumbnail"
                                         src="{{profile.profile_picture.url}}"
@@ -97,38 +98,22 @@
                             >
                           </div>
                         </div>
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                          <div class="restaurant-info">
-                            <div class="img-holder">
-                              <ul class="foodbakery-gallery-holder">
-                                <li class="gal-img">
-                                  <div class="drag-list">
-                                    <div class="item-thumb">
-                                      <img
-                                        class="thumbnail"
-                                        src="{{vendor.vendor_license.url}}"
-                                        alt="vendor license"
-                                      />
-                                    </div>
-                                  </div>
-                                </li>
-                              </ul>
-                            </div>
-                            <div class="text-holder">
-                              <label>Update License</label>
-                              <div class="upload-gallery">
-                                {{vendor_form.vendor_license}}
-                              </div>
-                            </div>
-                            <label class="text-danger">
-                              {{vendor_form.vendor_license.errors}}</label
-                            >
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                          <div class="field-holder">
+                            <label>First Name *</label>
+                            {{user_form.first_name}}
                           </div>
                         </div>
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                           <div class="field-holder">
-                            <label>Restaurant name *</label>
-                            {{vendor_form.vendor_name}}
+                            <label>Last Name *</label>
+                            {{user_form.last_name}}
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                          <div class="field-holder">
+                            <label>Phone Number *</label>
+                            {{user_form.phone_number}}
                           </div>
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -182,7 +167,7 @@
                   <div>
                     <div class="field-holder">
                       <div class="payment-holder input-button-loader">
-                        <input type="submit" value="Update Restaurant" />
+                        <input type="submit" value="Update Profile" />
                       </div>
                     </div>
                   </div>

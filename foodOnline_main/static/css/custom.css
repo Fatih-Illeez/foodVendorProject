@@ -26,3 +26,7 @@
   font-size: 12px;
   cursor: pointer;
 }
+
+.main-search.fancy .field-holder input[type="text"] {
+  color: black !important;
+}

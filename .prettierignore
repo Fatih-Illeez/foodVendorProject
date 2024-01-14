@@ -11,4 +11,6 @@
 /templates/vendor/edit_food.html
 /templates/marketplace/listings.html
 /templates/vendor/menu_builder.html
+/templates/customers/cover.html
+/templates/customers/cprofile.html
 
