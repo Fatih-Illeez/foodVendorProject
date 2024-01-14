@@ -32,6 +32,7 @@ def vprofile(request):
         else:
             print(profile_form.errors)
             print(vendor_form.errors)
+            messages.error(request, 'Please enter all fields')
     else:
         profile_form = UserProfileForm(instance=profile)
         vendor_form = VendorForm(instance=vendor)

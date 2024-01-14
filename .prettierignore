@@ -8,4 +8,7 @@
 /templates/vendor/fooditems_by_category.html
 /templates/vendor/menu_builder.html
 /templates/vendor/vprofile.html
+/templates/vendor/edit_food.html
+/templates/marketplace/listings.html
+/templates/vendor/menu_builder.html
 
