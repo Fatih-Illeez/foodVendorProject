@@ -23,10 +23,10 @@ def get_cart_amounts(request):
         cart_items = Cart.objects.filter(user=request.user)
         for item in cart_items:
             fooditem = FoodItem.objects.get(pk=item.fooditem.id)
-            subtotal += float((fooditem.price * item.quantity))
+            subtotal += round(float((fooditem.price * item.quantity)),3)
 
         tax_amount = round((tax * subtotal) / 100, 2)
-        grand_total = float(subtotal + tax_amount)
+        grand_total = round(float(subtotal + tax_amount), 2)
     
     if request.user.is_authenticated:
         return dict(subtotal=subtotal, tax=tax_amount, grand_total=grand_total)

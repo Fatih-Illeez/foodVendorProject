@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'menu',
     'marketplace',
     'customers',
+    'orders',
 ]
 
 MIDDLEWARE = [
@@ -73,6 +74,7 @@ TEMPLATES = [
                 'marketplace.context_processors.get_cart_counter',
                 'marketplace.context_processors.get_cart_amounts',
                 'accounts.context_processors.get_user_profile',
+                'accounts.context_processors.get_paypal_client_id',
             ],
         },
     },
@@ -161,3 +163,7 @@ EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL= config('DEFAULT_FROM_EMAIL')
 
 GOOGLE_MAP_API_KEY = config('GOOGLE_MAP_API_KEY')
+
+PAYPAL_CLIENT_ID= config('PAYPAL_CLIENT_ID')
+
+SECURE_CROSS_ORIGIN_OPENER_POLICY = 'same-origin-allow-popups'

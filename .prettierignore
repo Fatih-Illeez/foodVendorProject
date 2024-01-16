@@ -13,4 +13,5 @@
 /templates/vendor/menu_builder.html
 /templates/customers/cover.html
 /templates/customers/cprofile.html
-
+/templates/orders/order_confirmation_email.html
+/templates/orders/order_complete.html

@@ -5,7 +5,7 @@ from accounts.models import UserProfile
 from django.contrib import messages
 
 
-@login_required(login_url='login')
+@login_required(login_url='login') 
 def cprofile(request):
     profile = get_object_or_404(UserProfile, user=request.user)
     if request.method == 'POST':
